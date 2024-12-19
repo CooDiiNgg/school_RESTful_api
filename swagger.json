@@ -1,0 +1,173 @@
+{
+    "paths": [
+        {
+            "path": "/api",
+            "method": "GET",
+            "description": "Get API information"
+        },
+        {
+          "path": "/api/auth/register",
+          "method": "POST",
+          "description": "Register a new user",
+          "parameters": ["name", "email", "password"]
+        },
+        {
+          "path": "/api/auth/login",
+          "method": "POST",
+          "description": "User login",
+          "parameters": ["email", "password"]
+        },
+        {
+          "path": "/api/auth/logout",
+          "method": "POST",
+          "description": "Logout the user",
+          "headers": ["Authorization"]
+        },
+        {
+          "path": "/api/users/current",
+          "method": "GET",
+          "description": "Get current user profile",
+          "headers": ["Authorization"]
+        },
+        {
+          "path": "/api/users/current",
+          "method": "PUT",
+          "description": "Update user profile",
+          "headers": ["Authorization"],
+          "parameters": ["name", "email", "password"]
+        },
+        {
+          "path": "/api/books",
+          "method": "GET",
+          "description": "Get all books with filtering",
+          "query": ["title", "author", "year", "isbn", "available", "page", "limit"]
+        },
+        {
+          "path": "/api/books/{bookId}",
+          "method": "GET",
+          "description": "Get book details by ID",
+          "parameters": ["bookId"]
+        },
+        {
+          "path": "/api/books",
+          "method": "POST",
+          "description": "Add a new book to the inventory",
+          "headers": ["Authorization"],
+          "parameters": ["title", "description", "author", "year", "isbn", "quantity"]
+        },
+        {
+          "path": "/api/books/{bookId}",
+          "method": "PUT",
+          "description": "Update book details",
+          "headers": ["Authorization"],
+          "parameters": ["bookId", "title", "description", "author", "year", "isbn", "quantity"]
+        },
+        {
+          "path": "/api/books/{bookId}",
+          "method": "DELETE",
+          "description": "Remove a book from the inventory",
+          "headers": ["Authorization"],
+          "parameters": ["bookId"]
+        },
+        {
+          "path": "/api/books/barcode",
+          "method": "POST",
+          "description": "Add a book using barcode scanning",
+          "headers": ["Authorization"],
+          "parameters": ["barcode"]
+        },
+        {
+          "path": "/api/books/{bookId}/borrow",
+          "method": "POST",
+          "description": "Borrow a book",
+          "headers": ["Authorization"],
+          "parameters": ["bookId"]
+        },
+        {
+          "path": "/api/books/{bookId}/return",
+          "method": "POST",
+          "description": "Return a borrowed book",
+          "headers": ["Authorization"],
+          "parameters": ["bookId"]
+        },
+        {
+          "path": "/api/users/current/borrowing-history",
+          "method": "GET",
+          "description": "View borrowing history for the current user",
+          "headers": ["Authorization"]
+        },
+        {
+          "path": "/api/books/{bookId}/reserve",
+          "method": "POST",
+          "description": "Reserve a book",
+          "headers": ["Authorization"],
+          "parameters": ["bookId"]
+        },
+        {
+          "path": "/api/books/overdue",
+          "method": "GET",
+          "description": "List all overdue borrowed books",
+          "headers": ["Authorization"]
+        },
+        {
+          "path": "/api/users/{userId}/borrowing-history",
+          "method": "GET",
+          "description": "View borrowing history for a specific user",
+          "headers": ["Authorization"],
+          "parameters": ["userId"]
+        },
+        {
+          "path": "/api/events",
+          "method": "GET",
+          "description": "Get all events",
+          "query": ["name", "date"]
+        },
+        {
+          "path": "/api/events/{eventId}",
+          "method": "GET",
+          "description": "Get details of an event",
+          "parameters": ["eventId"]
+        },
+        {
+          "path": "/api/events/{eventId}/register",
+          "method": "POST",
+          "description": "Register for an event",
+          "headers": ["Authorization"],
+          "parameters": ["eventId"]
+        },
+        {
+          "path": "/api/events/{eventId}/cancel",
+          "method": "POST",
+          "description": "Cancel event registration",
+          "headers": ["Authorization"],
+          "parameters": ["eventId"]
+        },
+        {
+          "path": "/api/events",
+          "method": "POST",
+          "description": "Create an event",
+          "headers": ["Authorization"],
+          "parameters": ["name", "description", "date", "capacity"]
+        },
+        {
+          "path": "/api/events/{eventId}",
+          "method": "PUT",
+          "description": "Update event details",
+          "headers": ["Authorization"],
+          "parameters": ["eventId", "name", "description", "date", "capacity"]
+        },
+        {
+          "path": "/api/events/{eventId}",
+          "method": "DELETE",
+          "description": "Delete an event",
+          "headers": ["Authorization"],
+          "parameters": ["eventId"]
+        },
+        {
+          "path": "/api/status",
+          "method": "GET",
+          "description": "Run all unit tests"
+        }
+    ]
+}
+

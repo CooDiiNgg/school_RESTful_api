@@ -1,0 +1,49 @@
+flask_library_api/
+├── app/
+│   ├── __init__.py                 # App initialization, registering blueprints, and extensions
+│   ├── routes/                     # Organizes API endpoints (one file per resource group)
+│   │   ├── __init__.py             # Initialize routes module
+│   │   ├── auth_routes.py          # Endpoints for authentication
+│   │   ├── user_routes.py          # Endpoints for user operations
+│   │   ├── book_routes.py          # Endpoints for book management
+│   │   ├── event_routes.py         # Endpoints for event management
+│   │   ├── misc_routes.py          # Endpoints for misc like status and API info
+│   ├── models/                     # Organizes database models
+│   │   ├── __init__.py             # Initialize models module
+│   │   ├── user_model.py           # User model
+│   │   ├── book_model.py           # Book model
+│   │   ├── event_model.py          # Event model
+│   │   ├── borrowing_history_model.py  # Borrowing history model
+│   ├── schemas/                    # Handles request/response validation and serialization
+│   │   ├── __init__.py             # Initialize schemas module
+│   │   ├── user_schema.py          # User schemas
+│   │   ├── book_schema.py          # Book schemas
+│   │   ├── event_schema.py         # Event schemas
+│   │   ├── borrowing_history_schema.py  # Borrowing history schemas
+│   ├── services/                   # Handles business logic for API endpoints
+│   │   ├── __init__.py             # Initialize services module
+│   │   ├── auth_service.py         # Authentication-related logic
+│   │   ├── user_service.py         # User-related logic
+│   │   ├── book_service.py         # Book-related logic
+│   │   ├── event_service.py        # Event-related logic
+│   ├── utils/                      # Utility functions and helpers
+│   │   ├── __init__.py             # Initialize utils module
+│   │   ├── auth_helpers.py         # Functions for authentication and token management
+│   │   ├── pagination.py           # Pagination helpers
+│   │   ├── validators.py           # Custom validation utilities
+│   ├── extensions.py               # Initialize and configure Flask extensions
+│   ├── config.py                   # Application configurations for different environments
+│   ├── errors.py                   # Error handlers for custom exceptions
+│   └── main.py                     # Entry point to run the app
+├── migrations/                     # Handles database migrations using Flask-Migrate
+├── tests/                          # Contains test files (organized by resource group)
+│   ├── __init__.py                 # Initialize the tests module
+│   ├── test_auth.py                # Test cases for authentication endpoints
+│   ├── test_users.py               # Test cases for user endpoints
+│   ├── test_books.py               # Test cases for book endpoints
+│   ├── test_events.py              # Test cases for event endpoints
+│   ├── test_misc.py                # Test cases for miscellaneous endpoints
+├── .env                            # Environment variables (e.g., database credentials, secrets)
+├── .gitignore                      # Specifies files/folders to be ignored by Git
+├── README.md                       # Project documentation
+├── requirements.txt                # Python dependencies
